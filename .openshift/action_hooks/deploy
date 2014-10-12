@@ -1,0 +1,15 @@
+#!/bin/bash
+# This deploy hook gets executed after dependencies are resolved and the
+# build hook has been run but before the application has been started back
+# up again.  This script gets executed directly, so it could be python, php,
+# ruby, etc.
+
+# Activate virtual environment
+source $VIRTUAL_ENV/bin/activate
+
+# Executing migrate (database sync)
+python "$OPENSHIFT_REPO_DIR"wsgi/xperience/manage.py migrate --noinput
+
+# Executing collectstatic (organize static files)
+python "$OPENSHIFT_REPO_DIR"wsgi/xperience/manage.py collectstatic --noinput
+

@@ -1,0 +1,9 @@
+*.py[co]
+*.sw[po]
+*.bak
+*.orig
+*~
+.project
+.pydevproject
+/nbproject/
+/wsgi/static/
