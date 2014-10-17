@@ -8,8 +8,8 @@
 source $VIRTUAL_ENV/bin/activate
 
 # Executing migrate (database sync)
-python "$OPENSHIFT_REPO_DIR"wsgi/xperience/manage.py migrate --noinput
+python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py migrate --noinput
 
 # Executing collectstatic (organize static files)
-python "$OPENSHIFT_REPO_DIR"wsgi/xperience/manage.py collectstatic --noinput
+python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py collectstatic --noinput
 

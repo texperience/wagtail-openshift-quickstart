@@ -1,5 +1,5 @@
 """
-Global settings in xperience project
+Global settings in wagtail-openshift-quickstart project
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -74,11 +74,6 @@ TEMPLATE_LOADERS = (
     "django.template.loaders.app_directories.Loader",
 )
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, "wsgi/xperience/frontcore/templates"),
-)
-
-
 MIDDLEWARE_CLASSES = (
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
@@ -107,7 +102,7 @@ LOGIN_URL = "wagtailadmin_login"
 LOGIN_REDIRECT_URL = "wagtailadmin_home"
 
 # Wagtail configurations
-WAGTAIL_SITE_NAME = "xperience software"
+WAGTAIL_SITE_NAME = "wagtail-openshift-quickstart"
 
 # django-compressor settings
 COMPRESS_PRECOMPILERS = (
@@ -117,10 +112,10 @@ COMPRESS_PRECOMPILERS = (
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 LANGUAGES = (
-    ("de", "Deutsch"),
+    ("en", "English"),
 )
 
-LANGUAGE_CODE = "de"
+LANGUAGE_CODE = "en"
 
 USE_I18N = True
 
@@ -132,9 +127,9 @@ import warnings
 warnings.filterwarnings("error", r"DateTimeField .* received a naive datetime", RuntimeWarning, r"django\.db\.models\.fields")
 USE_TZ = True
 
-TIME_ZONE = "Europe/Berlin"
+TIME_ZONE = "Europe/London"
 
 # Import environment specific settings
-with open(os.path.join(os.environ.get("OPENSHIFT_DATA_DIR", os.environ.get("HOME")), "xperience-local/conf", "local_settings.py")) as f:
+with open(os.path.join(os.environ.get("OPENSHIFT_DATA_DIR", os.environ.get("HOME")), "wagtail-openshift-quickstart-local/conf", "local_settings.py")) as f:
     exec(f.read(), globals())
 

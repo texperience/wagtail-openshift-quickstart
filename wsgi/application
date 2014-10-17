@@ -8,7 +8,7 @@ virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 
 # Necessary environment variables
 os.environ['DJANGO_SETTINGS_MODULE'] = 'backcore.settings'
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'xperience'))
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'wagtail-openshift-quickstart'))
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python3.3/site-packages')
 
 # Activate own virtual environment
