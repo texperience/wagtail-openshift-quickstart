@@ -68,6 +68,7 @@ INSTALLED_APPS = (
     "wagtail.wagtailsearch",
     "wagtail.wagtailredirects",
     "wagtail.wagtailforms",
+    "wagtail.wagtailsites",
 
     # Own apps
     "frontcore",
