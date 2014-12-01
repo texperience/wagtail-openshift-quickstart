@@ -46,7 +46,7 @@ wagtail-openshift-quickstart
 ### Prepare OpenShift environment
 * `ssh` onto your application server
 `ssh userid@yourwagtaildemoapp-yourdomain.rhcloud.com`
-* Create and configure a `local_settings.py` (see template below) located at `$OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf` (path does not exist by default)
+* Create and configure a `local_settings.py` (see template below) located at `$OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf` (path will be created through the deploy hook script)
 
 ### Deploy on OpenShift
 * Back on your local machine push upstream to origin  

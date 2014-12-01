@@ -1,7 +1,7 @@
 #!/bin/bash
 # This deploy hook gets executed after dependencies are resolved and the
 # build hook has been run but before the application has been started back
-# up again.  This script gets executed directly, so it could be python, php,
+# up again. This script gets executed directly, so it could be python, php,
 # ruby, etc.
 
 # Activate virtual environment
@@ -13,3 +13,22 @@ python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py migrate 
 # Executing collectstatic (organize static files)
 python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py collectstatic --noinput
 
+# Prepare necessary persistent data folders
+if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local ]; then
+    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf ]; then
+    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/logs ]; then
+    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/logs
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media ]; then
+    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media
+fi
+
+# Link the persistent media folder from inside the repo to enable media serving
+ln -sf $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media $OPENSHIFT_REPO_DIR/wsgi/static/media
