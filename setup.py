@@ -10,6 +10,8 @@ setup(
     author_email="dev@timorieber.de",
     url="https://github.com/timorieber",
     install_requires=[
+        "django>=1.7,<1.8",
+        "psycopg2>=2.5.4",
         "wagtail==0.8.3"
     ],
 )
