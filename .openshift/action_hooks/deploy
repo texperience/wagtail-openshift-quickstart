@@ -7,12 +7,6 @@
 # Activate virtual environment
 source $VIRTUAL_ENV/bin/activate
 
-# Executing migrate (database sync)
-python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py migrate --noinput
-
-# Executing collectstatic (organize static files)
-python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py collectstatic --noinput
-
 # Prepare necessary persistent data folders
 if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local ]; then
     mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local
@@ -32,3 +26,14 @@ fi
 
 # Link the persistent media folder from inside the repo to enable media serving
 ln -sf $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media $OPENSHIFT_REPO_DIR/wsgi/static/media
+
+# Prepare default local_settings.py
+if [ ! -f $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf/local_settings.py ]; then
+    cp $OPENSHIFT_REPO_DIR/data/local_settings.py $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf/local_settings.py
+fi
+
+# Executing migrate (database sync)
+python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py migrate --noinput
+
+# Executing collectstatic (organize static files)
+python "$OPENSHIFT_REPO_DIR"wsgi/wagtail-openshift-quickstart/manage.py collectstatic --noinput
