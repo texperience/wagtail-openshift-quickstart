@@ -1,4 +1,5 @@
-{% load compress static wagtailuserbar %}
+{% load static %}
+{% load wagtailuserbar %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -12,26 +13,14 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {% compress css %}
-        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/frontcore.scss' %}">
-        {% endcompress %}
-
-        {% block extra_css %}
-            
-        {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/frontcore.css' %}">
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body>
         {% wagtailuserbar %}
 
         {% block content %}{% endblock %}
 
-        {% compress js %}
         <script type="text/javascript" src="{% static 'js/frontcore.js' %}"></script>
-        {% endcompress %}
-
-        {% block extra_js %}
-            
-        {% endblock %}
     </body>
 </html>

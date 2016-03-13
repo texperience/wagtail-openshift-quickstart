@@ -40,7 +40,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
 )
 
 # Application definition
@@ -54,7 +53,6 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
 
     # Third party apps
-    "compressor",
     "taggit",
     "modelcluster",
 
@@ -109,11 +107,6 @@ LOGIN_REDIRECT_URL = "wagtailadmin_home"
 
 # Wagtail configurations
 WAGTAIL_SITE_NAME = "wagtail-openshift-quickstart"
-
-# django-compressor settings
-COMPRESS_PRECOMPILERS = (
-    ("text/x-scss", "django_libsass.SassCompiler"),
-)
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
