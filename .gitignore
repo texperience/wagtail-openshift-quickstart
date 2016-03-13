@@ -1,10 +1,12 @@
-*.py[co]
-*.sw[po]
-*.bak
-*.orig
-*~
+# IDE project files
+.idea/
 .project
 .pydevproject
-.idea
 /nbproject/
-/wsgi/static/
+
+# Byte-compiled and optimized files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+*.egg-info/
