@@ -21,6 +21,10 @@ ADMINS = ()
 # Build paths inside this file like this: os.path.join(DATA_DIR, ...)
 DATA_DIR = os.path.join(os.environ.get("OPENSHIFT_DATA_DIR", os.environ.get("HOME", "")), "wagtail-openshift-quickstart-local")
 
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+MEDIA_ROOT = os.path.join(DATA_DIR, "media/")
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("OPENSHIFT_SECRET_TOKEN")
 
