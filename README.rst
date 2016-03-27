@@ -82,30 +82,15 @@ Prepare OpenShift environment
 * Open a terminal session on your application server
 
   ``rhc ssh -a yourwagtaildemoapp``
-* Change directory to your repository root
-
-  ``cd $OPENSHIFT_REPO_DIR``
-* Install necessary python packages (includes all relevant dependencies)
-
-  ``python setup.py install``
 * Change directory to your application root
 
-  ``cd wsgi/wagtail-openshift-quickstart``
-* Initialize the database structure and data
-
-  ``python manage.py migrate``
-* Collect and organize static files
-
-  ``python manage.py collectstatic``
+  ``cd $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart``
 * Create a superuser account
 
   ``python manage.py createsuperuser``
 * Close terminal session
 
   ``exit``
-* Restart your application
-
-  ``rhc app restart -a yourwagtaildemoapp``
 * Enjoy your remote production site at
 
   ``http://yourwagtaildemoapp-yourdomain.rhcloud.com`` (Homepage)

@@ -1,0 +1,7 @@
+# Necessary for latest packages due to problems with openshift mirrors, see also:
+# http://stackoverflow.com/a/29262347/3246440
+# https://caremad.io/2013/07/setup-vs-requirement/
+
+--index-url https://pypi.python.org/simple/
+
+-e .
