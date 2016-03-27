@@ -72,11 +72,25 @@ INSTALLED_APPS = (
     "frontcore",
 )
 
-# List of callables that know how to import templates from various sources
-TEMPLATE_LOADERS = (
-    "django.template.loaders.filesystem.Loader",
-    "django.template.loaders.app_directories.Loader",
-)
+# Template system settings
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
+                "django.core.context_processors.request",
+            ],
+        },
+    },
+]
 
 MIDDLEWARE_CLASSES = (
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -88,11 +102,6 @@ MIDDLEWARE_CLASSES = (
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "wagtail.wagtailcore.middleware.SiteMiddleware",
     "wagtail.wagtailredirects.middleware.RedirectMiddleware",
-)
-
-from django.conf import global_settings
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    "django.core.context_processors.request",
 )
 
 ROOT_URLCONF = "backcore.urls"
@@ -131,4 +140,3 @@ TIME_ZONE = "Europe/London"
 # Import environment specific settings
 with open(os.path.join(os.environ.get("OPENSHIFT_DATA_DIR", os.environ.get("HOME")), "wagtail-openshift-quickstart-local/conf", "local_settings.py")) as f:
     exec(f.read(), globals())
-

@@ -31,10 +31,11 @@ SECRET_KEY = os.environ.get("OPENSHIFT_SECRET_TOKEN")
 # SECURITY WARNING: don't run with debug turned on in production!
 # Uncomment/change on development environment
 #DEBUG = True
-#TEMPLATE_DEBUG = True
+#for template_engine in TEMPLATES:
+#    template_engine['OPTIONS']['debug'] = True
+
 # Comment/delete on development environment
 DEBUG = False
-TEMPLATE_DEBUG = False
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 # With DEBUG = True no allowed hosts are necessary
