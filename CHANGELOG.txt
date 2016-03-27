@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.0 (2016-xx-xx)
+1.1.0 (2016-03-27)
 ------------------
 
 * Improved installation of latest libraries
