@@ -4,6 +4,7 @@ Changelog
 1.1.0 (2016-xx-xx)
 ------------------
 
+* Fix: Corrected media folder linking after collectstatic
 
 1.0.0 (2016-03-18)
 ------------------
