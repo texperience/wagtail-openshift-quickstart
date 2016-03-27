@@ -30,7 +30,7 @@ Recommendations
 Getting started
 ---------------
 
-Initialize openshift application and local codebase
+Initialize OpenShift application and local codebase
 ***************************************************
 * Open a terminal and change into your workspace where your code will live
 * Create your `Python-based`_ and `PostgreSQL-backed`_ OpenShift `application`_ with a single command
@@ -42,6 +42,30 @@ Initialize openshift application and local codebase
 .. _application: https://developers.openshift.com/en/getting-started-creating-applications.html
 
 **Great!** Your application is deployed and the git repository is cloned locally into ``yourwagtaildemoapp``
+
+Prepare OpenShift environment
+*****************************
+* Open a terminal session on your application server
+
+  ``rhc ssh -a yourwagtaildemoapp``
+* Change directory to your application root
+
+  ``cd $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart``
+* Create a superuser account
+
+  ``python manage.py createsuperuser``
+* Close terminal session
+
+  ``exit``
+* Enjoy your remote production site at
+
+  ``http://yourwagtaildemoapp-yourdomain.rhcloud.com`` (Homepage)
+
+  ``http://yourwagtaildemoapp-yourdomain.rhcloud.com/wagtail`` (Wagtail CMS administration)
+
+  ``http://yourwagtaildemoapp-yourdomain.rhcloud.com/django`` (Django administration)
+
+**Congratulations!** Now you can manage and publicly view content in your production site!
 
 Initialize local development environment
 ****************************************
@@ -73,30 +97,8 @@ Initialize local development environment
 
   ``http://localhost:8000/django`` (Django administration)
 
-**Congratulations!** You're ready to develop your Wagtail powered webpages.
+**Let's code!** You're ready to develop your Wagtail powered webpages.
 
 .. _Getting started: http://docs.wagtail.io/en/stable/getting_started/index.html
 
-Prepare OpenShift environment
-*****************************
-* Open a terminal session on your application server
-
-  ``rhc ssh -a yourwagtaildemoapp``
-* Change directory to your application root
-
-  ``cd $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart``
-* Create a superuser account
-
-  ``python manage.py createsuperuser``
-* Close terminal session
-
-  ``exit``
-* Enjoy your remote production site at
-
-  ``http://yourwagtaildemoapp-yourdomain.rhcloud.com`` (Homepage)
-  
-  ``http://yourwagtaildemoapp-yourdomain.rhcloud.com/wagtail`` (Wagtail CMS administration)
-  
-  ``http://yourwagtaildemoapp-yourdomain.rhcloud.com/django`` (Django administration)
-
-**That's it! Easy, right?** You've set up an Openshift hosted Wagtail CMS and your local development environment in 10 Minutes! Awesome!
+**That's it! Easy, right?** You've set up an OpenShift hosted Wagtail CMS and your local development environment in 10 Minutes! Awesome!
