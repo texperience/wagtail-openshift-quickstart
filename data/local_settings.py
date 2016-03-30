@@ -1,5 +1,5 @@
 """
-Template for environment specific settings in wagtail-openshift-quickstart project
+Environment specific settings in this project, global variables are available
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -12,14 +12,8 @@ https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 """
 
-# Necessary imports
-import os
-
 # Admins for error reporting
 ADMINS = ()
-
-# Build paths inside this file like this: os.path.join(DATA_DIR, ...)
-DATA_DIR = os.path.join(os.environ.get("OPENSHIFT_DATA_DIR", os.environ.get("HOME", "")), "wagtail-openshift-quickstart-local")
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"

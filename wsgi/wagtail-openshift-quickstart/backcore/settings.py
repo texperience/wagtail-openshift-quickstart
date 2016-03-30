@@ -1,5 +1,5 @@
 """
-Global settings in wagtail-openshift-quickstart project
+Global settings in this project
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -15,8 +15,12 @@ https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 # Necessary imports
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths within the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.join(os.path.dirname(__file__), "../../..")
+
+# Build paths to the persistent data directory for this project like this: os.path.join(DATA_DIR, ...)
+# Set default to $HOME/project (may be symlinked) when not on OpenShift
+DATA_DIR = os.environ.get("OPENSHIFT_DATA_DIR", os.path.join(os.environ.get("HOME"), "wagtail-openshift-quickstart"))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -130,10 +134,11 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/dev/topics/i18n/timezones/
 import warnings
 warnings.filterwarnings("error", r"DateTimeField .* received a naive datetime", RuntimeWarning, r"django\.db\.models\.fields")
+
 USE_TZ = True
 
 TIME_ZONE = "Europe/London"
 
 # Import environment specific settings
-with open(os.path.join(os.environ.get("OPENSHIFT_DATA_DIR", os.environ.get("HOME")), "wagtail-openshift-quickstart-local/conf", "local_settings.py")) as f:
-    exec(f.read(), globals())
+with open(os.path.join(DATA_DIR, "conf", "local_settings.py")) as local_settings:
+    exec(local_settings.read(), globals())

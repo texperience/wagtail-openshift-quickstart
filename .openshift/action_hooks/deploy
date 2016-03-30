@@ -8,25 +8,21 @@
 source $VIRTUAL_ENV/bin/activate
 
 # Prepare necessary persistent data folders
-if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local ]; then
-    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local
+if [ ! -d $OPENSHIFT_DATA_DIR/conf ]; then
+    mkdir $OPENSHIFT_DATA_DIR/conf
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf ]; then
-    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf
+if [ ! -d $OPENSHIFT_DATA_DIR/logs ]; then
+    mkdir $OPENSHIFT_DATA_DIR/logs
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/logs ]; then
-    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/logs
-fi
-
-if [ ! -d $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media ]; then
-    mkdir $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media
+if [ ! -d $OPENSHIFT_DATA_DIR/media ]; then
+    mkdir $OPENSHIFT_DATA_DIR/media
 fi
 
 # Prepare default local_settings.py
-if [ ! -f $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf/local_settings.py ]; then
-    cp $OPENSHIFT_REPO_DIR/data/local_settings.py $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/conf/local_settings.py
+if [ ! -f $OPENSHIFT_DATA_DIR/conf/local_settings.py ]; then
+    cp $OPENSHIFT_REPO_DIR/data/local_settings.py $OPENSHIFT_DATA_DIR/conf/local_settings.py
 fi
 
 # Executing migrate (database sync)
@@ -36,4 +32,4 @@ python $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart/manage.py migrate -
 python $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart/manage.py collectstatic --noinput
 
 # Link the persistent media folder from inside the repo to enable media serving
-ln -sf $OPENSHIFT_DATA_DIR/wagtail-openshift-quickstart-local/media $OPENSHIFT_REPO_DIR/wsgi/static/media
+ln -sf $OPENSHIFT_DATA_DIR/media $OPENSHIFT_REPO_DIR/wsgi/static/media
