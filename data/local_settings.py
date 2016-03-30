@@ -20,11 +20,12 @@ ADMINS = ()
 MEDIA_ROOT = os.path.join(DATA_DIR, "media/")
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("OPENSHIFT_SECRET_TOKEN")
+SECRET_KEY = os.environ.get("OPENSHIFT_SECRET_TOKEN", "default-for-local-development")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Uncomment/change on development environment
 #DEBUG = True
+#
 #for template_engine in TEMPLATES:
 #    template_engine['OPTIONS']['debug'] = True
 
@@ -44,7 +45,7 @@ ALLOWED_HOSTS = [
 #DATABASES = {
 #    "default": {
 #        "ENGINE": "django.db.backends.sqlite3",
-#        "NAME": "/path/to/mydatabase",
+#        "NAME": os.path.join(DATA_DIR, "database/sqlite.db"),
 #    }
 #}
 # This quickstart uses PostgreSQL on OpenShift
@@ -59,4 +60,4 @@ DATABASES = {
 }
 
 # Wagtail configurations
-WAGTAIL_SITE_NAME = os.environ.get("OPENSHIFT_APP_NAME", "")
+WAGTAIL_SITE_NAME = os.environ.get("OPENSHIFT_APP_NAME", "wagtail-openshift-quickstart")
