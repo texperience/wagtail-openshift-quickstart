@@ -114,9 +114,6 @@ LOGIN_URL = "wagtailadmin_login"
 
 LOGIN_REDIRECT_URL = "wagtailadmin_home"
 
-# Wagtail configurations
-WAGTAIL_SITE_NAME = "wagtail-openshift-quickstart"
-
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 LANGUAGES = (

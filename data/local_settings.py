@@ -63,3 +63,6 @@ DATABASES = {
       "PASSWORD": os.environ.get("OPENSHIFT_POSTGRESQL_DB_PASSWORD"),
     }
 }
+
+# Wagtail configurations
+WAGTAIL_SITE_NAME = os.environ.get("OPENSHIFT_APP_NAME", "")
