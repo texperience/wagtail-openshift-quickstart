@@ -48,12 +48,9 @@ Prepare OpenShift environment
 * Open a terminal session on your application server
 
   ``rhc ssh -a yourwagtaildemoapp``
-* Change directory to your application root
-
-  ``cd $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart``
 * Create a superuser account
 
-  ``python manage.py createsuperuser``
+  ``python $OPENSHIFT_REPO_DIR/wsgi/wagtail-openshift-quickstart/manage.py createsuperuser``
 * Close terminal session
 
   ``exit``
