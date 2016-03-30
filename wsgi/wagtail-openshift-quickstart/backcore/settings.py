@@ -48,32 +48,30 @@ STATICFILES_FINDERS = (
 
 # Application definition
 INSTALLED_APPS = (
-    # Default django apps
+    # Own apps
+    "frontcore",
+
+    # Wagtail apps
+    "wagtail.wagtailredirects",
+    "wagtail.wagtailsites",
+    "wagtail.wagtailusers",
+    "wagtail.wagtaildocs",
+    "wagtail.wagtailimages",
+    "wagtail.wagtailsearch",
+    "wagtail.wagtailadmin",
+    "wagtail.wagtailcore",
+
+    # Wagtail dependencies
+    "modelcluster",
+    "taggit",
+
+    # Django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
-    # Third party apps
-    "taggit",
-    "modelcluster",
-
-    "wagtail.wagtailcore",
-    "wagtail.wagtailadmin",
-    "wagtail.wagtaildocs",
-    "wagtail.wagtailsnippets",
-    "wagtail.wagtailusers",
-    "wagtail.wagtailimages",
-    "wagtail.wagtailembeds",
-    "wagtail.wagtailsearch",
-    "wagtail.wagtailredirects",
-    "wagtail.wagtailforms",
-    "wagtail.wagtailsites",
-
-    # Own apps
-    "frontcore",
 )
 
 # Template system settings
