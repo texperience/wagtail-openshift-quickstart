@@ -49,7 +49,7 @@ STATICFILES_FINDERS = (
 # Application definition
 INSTALLED_APPS = (
     # Own apps
-    "frontcore",
+    # List your own apps here!
 
     # Wagtail apps
     "wagtail.wagtailredirects",
