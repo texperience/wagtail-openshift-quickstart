@@ -1,18 +1,28 @@
 Changelog
 =========
 
-1.2.0 (2016-xx-xx)
+1.2 (2016-04-01)
 ------------------
 
+* Optimized readme
+* Moved WAGTAIL_SITE_NAME to local settings
+* Simplified path for persistent data directory
+* Listed installed apps in precedence order
+* Optimized defaults in local settings
+* Added python-3.3 as alternative cartridge
+* Moved to staticfiles instead of static in templates
+* Simplified project structure
 
-1.1.0 (2016-03-27)
+
+1.1 (2016-03-27)
 ------------------
 
 * Improved installation of latest libraries
 * Upgraded to new Django TEMPLATE setting
 * Fix: Corrected media folder linking after collectstatic
 
-1.0.0 (2016-03-18)
+
+1.0 (2016-03-18)
 ------------------
 
 * Initial release
