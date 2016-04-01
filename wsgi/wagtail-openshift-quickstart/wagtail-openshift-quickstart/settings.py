@@ -106,7 +106,7 @@ MIDDLEWARE_CLASSES = (
     "wagtail.wagtailredirects.middleware.RedirectMiddleware",
 )
 
-ROOT_URLCONF = "backcore.urls"
+ROOT_URLCONF = "wagtail-openshift-quickstart.urls"
 
 SITE_ID = 1
 
