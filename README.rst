@@ -1,7 +1,7 @@
 wagtail-openshift-quickstart
 ============================
 
-.. image:: https://img.shields.io/badge/version-v1.2.0-blue.svg
+.. image:: https://img.shields.io/badge/version-v1.3a0-blue.svg
 
 .. image:: https://img.shields.io/badge/license-ISC%20License%20(ISCL)-blue.svg
     :target: http://en.wikipedia.org/wiki/ISC_license

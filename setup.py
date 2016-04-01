@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="wagtail-openshift-quickstart",
-    version="1.2.0",
+    version="1.3a0",
     description="Wagtail CMS quickstart for deployment on OpenShift",
     author="Timo Rieber",
     author_email="trieber@texperience.de",
