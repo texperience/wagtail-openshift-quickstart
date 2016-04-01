@@ -49,7 +49,7 @@ STATICFILES_FINDERS = (
 # Application definition
 INSTALLED_APPS = (
     # Own apps
-    # List your own apps here!
+    "wagtail-openshift-quickstart",
 
     # Wagtail apps
     "wagtail.wagtailredirects",
