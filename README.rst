@@ -73,7 +73,7 @@ Initialize local development environment
 * Install necessary python packages (includes all relevant dependencies)
 
   ``pip install -e .``
-* Create and configure a ``local_settings.py`` (copy template from ``data/local_settings.py``) located at ``$HOME/wagtail-openshift-quickstart-local/conf``
+* Create and configure a ``local_settings.py`` (copy template from ``data/local_settings.py``) located at ``$HOME/wagtail-openshift-quickstart/conf``
 * Change directory to your application root
 
   ``cd wsgi/wagtail-openshift-quickstart``
