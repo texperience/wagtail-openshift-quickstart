@@ -48,7 +48,7 @@ STATICFILES_FINDERS = (
 
 # Application definition
 INSTALLED_APPS = (
-    # Own apps
+    # Project apps
     "wagtail-openshift-quickstart",
 
     # Wagtail apps
