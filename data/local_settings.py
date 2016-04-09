@@ -23,13 +23,7 @@ MEDIA_ROOT = os.path.join(DATA_DIR, "media/")
 SECRET_KEY = os.environ.get("OPENSHIFT_SECRET_TOKEN", "default-for-local-development")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Uncomment/change on development environment
-#DEBUG = True
-#
-#for template_engine in TEMPLATES:
-#    template_engine['OPTIONS']['debug'] = True
-
-# Comment/delete on development environment
+# Template debugging falls back to this value, too, so no need to set it separately
 DEBUG = False
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
