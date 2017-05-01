@@ -4,6 +4,7 @@ Changelog
 1.3 (2016-xx-xx)
 ------------------
 
+* Cleanup: Cleaned up needless gitkeep file
 * Cleanup: Removed redundant debug settings from local_settings.py
 
 
