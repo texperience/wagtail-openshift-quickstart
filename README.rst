@@ -35,7 +35,7 @@ Initialize OpenShift application and local codebase
 * Open a terminal and change into your workspace where your code will live
 * Create your `Python-based`_ (``python-2.7`` or ``python-3.3``) and `PostgreSQL-backed`_ OpenShift `application`_ with a single command
 
-  ``rhc app create yourwagtaildemoapp python-2.7 postgresql-9.2 --from-code https://github.com/timorieber/wagtail-openshift-quickstart``
+  ``rhc app create yourwagtaildemoapp python-2.7 postgresql-9.2 --from-code https://github.com/texperience/wagtail-openshift-quickstart``
 
 .. _Python-based: https://www.python.org
 .. _PostgreSQL-backed: http://www.postgresql.org
