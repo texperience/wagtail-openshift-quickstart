@@ -1,3 +1,6 @@
+This repository is not longer maintained! The OpenShift Online 2 platform has been sunset at September 30th, 2017. Though OpenShift Online 2 has been extended to December 31st, 2017 for those who were already paying customers, it makes no sense to start a new project on this platform.
+###############################################################################################################################################################################################################################################################################################
+
 wagtail-openshift-quickstart
 ============================
 
